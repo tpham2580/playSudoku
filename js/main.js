@@ -212,12 +212,12 @@ function clearCheckOutput(){
 function setCheckOutput(check){
     clearCheckOutput();
 
-    var newButton = document.createElement("button");
+    var newButton = document.createElement("div");
     if (check == true){
-        newButton.setAttribute("class", "btn btn-lg btn-outline-success disabled");
+        newButton.setAttribute("class", "text-dark fs-3 p-2 bg-success");
         newButton.textContent = "SOLVED";
     } else {
-        newButton.setAttribute("class", "btn btn-lg btn-outline-danger disabled");
+        newButton.setAttribute("class", "text-dark fs-3 p-2 bg-danger");
         newButton.textContent = "NOT SOLVED";
     }
     answerID.appendChild(newButton);
