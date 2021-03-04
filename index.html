@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Play Sudoku by Tim</title>
+    <link rel = "icon" href="./images/sudoku-icon.svg" type = "image/x-icon"> 
+    <base href=".">
+
+    <script src="https://kit.fontawesome.com/316a5a7a44.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="./css/style.css" rel="stylesheet">
+
+  </head>
+  <body class="background align-content-center text-center text-light">
+
+    <div class="h1 text-light py-3">Play Sudoku by Tim</div>
+    
+    <div class="container">
+
+      <hr>
+
+      <br>
+
+      <div class="row">
+        <div class="col">
+          <div id="table"></div>
+        </div>
+
+        <div class="col">
+          <div class="row">
+            <div class="text-center">
+              <button id="default" type="button" class="btn btn-primary">Set Default</button>
+              <button id="reset-table" type="button" class="btn btn-warning"><i class="fa fa-fast-backward pe-1" aria-hidden="true"></i>Reset Table</button>
+              <button id="clear-table" type="button" class="btn btn-danger"><i class="fa fa-trash pe-1" aria-hidden="true"></i>Clear Table</button>
+            </div>
+          </div>
+    
+          <br>
+
+          <div class="row">
+            <div class="text-center">
+              <button id="easy" type="button" class="btn btn-success">Easy</button>
+              <button id="intermediate" type="button" class="btn btn-warning">Intermediate</button>
+              <button id="difficult" type="button" class="btn btn-danger">Difficult</button>
+            </div>
+          </div>
+    
+          <br>
+    
+          <div class="row">
+            <div class="text-center">
+              <button id="check" type="button" class="btn btn-success"><i class="fa fa-check-square pe-1" aria-hidden="true"></i>Check</button>
+              <button id="solve" type="button" class="btn btn-secondary"><i class="fa fa-magic pe-1" aria-hidden="true"></i>Solve</button>
+            </div>
+          </div>
+    
+          <br>
+
+          <div class="row">
+            <div id="answer" class="text-center"></div>
+          </div>
+
+          <br>
+
+          <div class="row text-start">
+            <div class="h1 text-light">Instructions</div>
+            <hr>
+            <ul class="text-light">
+              <li>Click on any cell to highlight it</li>
+              <ul>
+                <li>Input any number from 1 to 9</li>
+                <li>Press delete or backspace to remove value in highlighted cell</li>
+              </ul>
+            </ul>
+          </div>
+
+          <br>
+
+          <dl class="row text-start text-light">
+            <dt class="col-sm-4">Button</dt>
+            <dd class="col-sm-8">Action</dd>
+
+            <hr>
+          
+            <dt class="col-sm-4">Set Default</dt>
+            <dd class="col-sm-8">Defaults all non-empty cells</dd>
+
+            <dt class="col-sm-4">Reset Table</dt>
+            <dd class="col-sm-8">Resets the sudoku table to only defaulted values</dd>
+
+            <dt class="col-sm-4">Clear Table</dt>
+            <dd class="col-sm-8">Clears entire sudoku table (including defaulted values)</dd>
+
+            <dt class="col-sm-4">Check</dt>
+            <dd class="col-sm-8">Checks if sudoku puzzle is solved</dd>
+
+            <dt class="col-sm-4">Solve</dt>
+            <dd class="col-sm-8">Solves the sudoku puzzle</dd>
+
+            <dt class="col-sm-4">Easy, Intermediate, Difficult</dt>
+            <dd class="col-sm-8">An example of a sudoku puzzle for each difficulty</dd>
+          </dl>
+
+          
+
+        </div>
+
+      </div>
+      
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+    <script type='module' src='./js/main.js'></script>
+  </body>
+</html>

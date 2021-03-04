@@ -1,0 +1,17 @@
+.background {
+    background-color: #323232;
+}
+
+#table {
+    display: grid;
+    grid-template-columns: repeat(9, 100px);
+    grid-template-rows: repeat(9, 100px);
+    justify-content: center;
+}
+
+.cell {
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+    font-size: 72px;
+}
