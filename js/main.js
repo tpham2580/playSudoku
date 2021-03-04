@@ -206,30 +206,31 @@ function checkTable(){
 }
 
 function clearCheckOutput(){
-    answerID.innerHTML = "";
+    while (answerID.firstChild){
+        answerID.removeChild(answerID.firstChild);
+    };
 }
 
 function setCheckOutput(check){
     clearCheckOutput();
 
-    var newButton = document.createElement("div");
+    var newOutput = document.createElement("div");
     if (check == true){
-        newButton.setAttribute("class", "text-dark fs-3 p-2 bg-success");
-        newButton.textContent = "SOLVED";
+        newOutput.setAttribute("class", "text-dark fs-3 p-2 bg-success");
+        newOutput.textContent = "SOLVED";
     } else {
-        newButton.setAttribute("class", "text-dark fs-3 p-2 bg-danger");
-        newButton.textContent = "NOT SOLVED";
+        newOutput.setAttribute("class", "text-dark fs-3 p-2 bg-danger");
+        newOutput.textContent = "NOT SOLVED";
     }
-    answerID.appendChild(newButton);
+    answerID.appendChild(newOutput);
 }
 
 // checks to see if the sudoku puzzle is solved
 document.getElementById("check").addEventListener("click", function(e){
     e.preventDefault();
     clearOutput();
-    check = checkTable();
+    var check = checkTable();
     setCheckOutput(check);
-    
 });
 
 // find empty position and returns array of i and j
@@ -288,7 +289,7 @@ function solve(){
 
     // iterates from 1 to 9 for each cell, finding the first number that works
     for (var i=1; i<10; i++){
-        if (isValid(i, [row, col])){
+        if (isValid(i.toString(), [row, col])){
             var cell = document.getElementById(row.toString() + col.toString());
             table[row][col] = i.toString();
             cell.textContent = i.toString();
@@ -306,6 +307,18 @@ function solve(){
     // backtracks if we can not find a solution
     return false;
 
+}
+
+function invalidInput(val, pos){
+    clearCheckOutput();
+
+    if (!isValid(val, pos)){
+        var newOutput = document.createElement("div");
+        newOutput.setAttribute("class", "text-dark fs-3 p-2 bg-danger");
+        newOutput.textContent = "Invalid Input";
+        answerID.appendChild(newOutput);
+    }
+    
 }
 
 function clearOutput(){
@@ -328,7 +341,6 @@ window.onload = function() {
 
     $(".cell").click(function(){
         newCell = $(this);
-        console.log(newCell[0].textContent);
         if (newCell.attr("data-original") === "true"){
             if (oldCell != null){
                 oldCell.css("background-color", "white");
@@ -344,15 +356,18 @@ window.onload = function() {
         // when the user clicks on a key
         $(window).keydown(function(e){
             if (newCell[0].getAttribute("data-original") != "true"){
+                clearCheckOutput();
                 var id_list = newCell[0].getAttribute("id").toString().split("");
                 var x = parseInt(id_list[0]);
                 var y = parseInt(id_list[1]);
                 // >=1 and <=9
                 if ((e.which >= 49 && e.which <= 57) || (e.which >= 97 && e.which <= 105)){
                     if (e.which >= 97 && e.which <= 105){
+                        invalidInput(parseInt(String.fromCharCode(e.which - 48)), [x, y]);
                         newCell[0].textContent = String.fromCharCode(e.which - 48);
                         table[x][y] = String.fromCharCode(e.which - 48);
                     } else {
+                        invalidInput(parseInt(String.fromCharCode(e.which)), [x, y]);
                         newCell[0].textContent = String.fromCharCode(e.which);
                         table[x][y] = String.fromCharCode(e.which);
                     }
