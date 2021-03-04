@@ -1,7 +1,4 @@
 // all variables
-// referenced youtube video to set up sudoku table; link here: https://www.youtube.com/watch?v=VokhAdAfWCw
-// referenced geeksforgeeks sudoku backtracking to help with solving sudoku puzzle. Link here: https://www.geeksforgeeks.org/sudoku-backtracking-7/
-
 var selected_num;
 var selected_slot;
 var table = [];
