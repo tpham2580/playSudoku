@@ -299,6 +299,7 @@ function solve(){
 
             // resets the cell if the table does not work
             table[row][col] = 0;
+            cell.textContent = "";
         }
     }
 
@@ -327,6 +328,7 @@ window.onload = function() {
 
     $(".cell").click(function(){
         newCell = $(this);
+        console.log(newCell[0].textContent);
         if (newCell.attr("data-original") === "true"){
             if (oldCell != null){
                 oldCell.css("background-color", "white");
@@ -342,11 +344,11 @@ window.onload = function() {
         // when the user clicks on a key
         $(window).keydown(function(e){
             if (newCell[0].getAttribute("data-original") != "true"){
+                var id_list = newCell[0].getAttribute("id").toString().split("");
+                var x = parseInt(id_list[0]);
+                var y = parseInt(id_list[1]);
                 // >=1 and <=9
                 if ((e.which >= 49 && e.which <= 57) || (e.which >= 97 && e.which <= 105)){
-                    var id_list = newCell[0].getAttribute("id").toString().split("");
-                    var x = parseInt(id_list[0]);
-                    var y = parseInt(id_list[1]);
                     if (e.which >= 97 && e.which <= 105){
                         newCell[0].textContent = String.fromCharCode(e.which - 48);
                         table[x][y] = String.fromCharCode(e.which - 48);
