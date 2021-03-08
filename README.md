@@ -3,7 +3,7 @@ Author: Timothy Pham
 
 ## Overview
 ### Description
-The website is hosted on GitHub Pages
+The website is hosted on GitHub Pages: https://tpham2580.github.io/playSudoku/
 
 ### Instructions
 1. Click on any cell to highlight it
