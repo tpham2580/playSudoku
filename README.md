@@ -7,7 +7,7 @@ The website is hosted on GitHub Pages: https://tpham2580.github.io/playSudoku/
 
 ### Website Walkthough GIF
 
-![](sudoku-walkthrough1.gif)
+![](playsudoku-walkthrough.gif)
 
 ### Instructions
 1. Click on any cell to highlight it
