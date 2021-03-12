@@ -5,6 +5,10 @@ Author: Timothy Pham
 ### Description
 The website is hosted on GitHub Pages: https://tpham2580.github.io/playSudoku/
 
+### Website Walkthough GIF
+
+![](sudoku-walkthrough.gif)
+
 ### Instructions
 1. Click on any cell to highlight it
 2. Input any number from 1 to 9 or press delete or backspace to remove value in highlighted cell
